@@ -1,11 +1,15 @@
 import asyncio
+import os
 from threading import Thread
 
 import discord
+from dotenv import load_dotenv
 
 from bot import bot, tree, tree_groups
 from commands import setup_all
 from web import run_flask
+
+api_key = os.getenv("API_KEY")
 
 tryout_result_template = discord.Embed(
     title="Tryout Results", description="", color=discord.Color.green()
@@ -27,13 +31,15 @@ async def on_ready():
 
 
 async def main():
+    if not api_key:
+        print("API key not found!")
+        return
+
     flask_thread = Thread(target=run_flask, daemon=True)
     flask_thread.start()
 
     async with bot:
-        await bot.start(
-            "MTQxOTQyMzkwOTU4OTE1NTk3MA.Gqw01m.8eet5Udig9j0nq7WQ1qThkDv7IaFozzHCvvDqg"
-        )
+        await bot.start(api_key)
 
 
 if __name__ == "__main__":
