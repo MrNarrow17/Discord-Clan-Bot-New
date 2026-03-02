@@ -9,6 +9,8 @@ from bot import bot, tree, tree_groups
 from commands import setup_all
 from web import run_flask
 
+load_dotenv()
+
 api_key = os.getenv("API_KEY")
 
 tryout_result_template = discord.Embed(
