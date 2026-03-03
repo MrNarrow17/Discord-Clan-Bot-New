@@ -1,6 +1,0 @@
-discord.py
-flask
-g4f
-typing_extensions
-revampdb
-python-dotenv
