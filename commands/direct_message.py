@@ -45,9 +45,9 @@ def setup(tree, bot):
                     value=(
                         "> `🛡` **From** ─ "
                         + (
-                            f"{interaction.user.mention} ─ *Staff of **{server_name}***"
+                            f"{interaction.user.mention} ─ Staff of **{server_name}**"
                             if not anonymous
-                            else f"*Staff of **{server_name}***"
+                            else f"Staff of **{server_name}**"
                         )
                     )
                     + "\n\u200b",

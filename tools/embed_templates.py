@@ -100,8 +100,7 @@ def roster_embed(
 
     if sub_members:
         sub_member_text = "\n".join(
-            f"> `{i:>2}.` {m.mention} ─ **{m.display_name}**"
-            for i, m in enumerate(sub_members, start=1)
+            f"> `{i:>2}.` {m.mention}" for i, m in enumerate(sub_members, start=1)
         )
     else:
         sub_member_text = "> *No subs registered.*"
